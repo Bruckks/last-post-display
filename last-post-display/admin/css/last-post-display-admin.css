@@ -1,0 +1,11 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+ .lpd__info-message {
+    
+    font-size:20px;
+ }
+ .lpd__info-message span {
+    color:green;
+ }

@@ -1,0 +1,24 @@
+{
+	"name": "bruckks/last-post-display",
+	"description": "Display recent posts with shortcode",
+	"license": "proprietary",
+	"authors": [
+		{
+			"name": "bruckks",
+			"email": "bruckks@gmail.com"
+		}
+	],
+	"type": "wordpress-plugin",
+	"config": {
+		"sort-packages": true
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://packagist.org"
+		}
+	],
+	"require": {
+		"psr/log": "1.1.4"
+	}
+}

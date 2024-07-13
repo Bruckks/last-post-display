@@ -1,0 +1,115 @@
+.lpd-section {
+    margin: 50px 0;
+}
+.lpd-section__container {
+    margin: 0 auto;
+    width: 80vw;
+    max-width:100%;
+}
+.lpd-section__wrapper {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+.lpd-section__title {
+    text-align:center;
+    font-size:40px;
+    margin-bottom: 25px;
+    font-weight:600;
+}
+.lpd__item {
+    border: 1px solid #e7e7e7;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 0px #e7e7e7;
+    margin-bottom: 15px;
+}
+.lpd__item a {
+    text-decoration: none;
+}
+.lpd__item-image {
+    height: 300px;
+    display: block;
+}
+.lpd__item-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.lpd__item-desc {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    height: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    font-size: 12px;
+    font-weight:400;
+}
+.lpd__item-desc > * {
+    font-size: 12px;
+    padding:0;
+    padding-bottom: 5px;
+    margin: 0;
+    font-weight:400;
+}
+.lpd__item-desc hr {
+    display:none;
+}
+.lpd__item-content {
+    padding: 20px;
+    height: calc(100% - 300px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.lpd__item-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 1.1;
+    display:inline-block;
+    width:100%;
+    color: #000;
+}
+.lpd__item-title:hover {
+    color: #000;
+}
+.lpd__item-desc {
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.lpd__item-more a {
+    background-color: black;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 12px;
+}
+.lpd__item-more a:hover {
+    color:#fff;
+}
+@media (max-width: 1400px) {
+    .lpd-section__container {
+        width: 90vw;
+    }
+}
+@media (max-width: 1024px) {
+    .lpd-section__container {
+        width: 100vw;
+    }
+    .lpd-section__wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+@media (max-width: 580px) {
+    .lpd-section__wrapper {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0;
+    }
+}
