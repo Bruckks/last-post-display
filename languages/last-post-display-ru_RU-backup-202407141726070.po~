@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Last Post Display\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-13 15:24+0000\n"
-"PO-Revision-Date: 2024-07-14 17:26+0000\n"
+"PO-Revision-Date: 2024-07-13 15:27+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "bruckks"
 msgstr ""
 
-#: admin/class-last-post-display-admin.php:109
+#: admin/class-last-post-display-admin.php:107
 msgid "Count Of Posts"
 msgstr "Количество постов"
 
@@ -37,7 +37,7 @@ msgstr ""
 msgid "Last Post Display"
 msgstr ""
 
-#: admin/class-last-post-display-admin.php:102
+#: admin/class-last-post-display-admin.php:100
 msgid "Post Parameters"
 msgstr "Параметры постов"
 
@@ -45,14 +45,10 @@ msgstr "Параметры постов"
 msgid "Posts not found"
 msgstr "Посты не найдены"
 
-#: admin/class-last-post-display-admin.php:169
+#: admin/class-last-post-display-admin.php:147
 msgid "Settings saved!"
 msgstr "Настройки сохранены!"
 
-#: admin/class-last-post-display-admin.php:143
-msgid "The number of posts should not be less than 1."
-msgstr "Количество постов не должно быть меньше 1."
-
-#: admin/class-last-post-display-admin.php:82
+#: admin/class-last-post-display-admin.php:81
 msgid "To output posts, use the shortcode "
 msgstr "Для вывода сообщений используйте шорткод "

@@ -17,6 +17,7 @@ class Last_Post_Display_Admin
 	private static $optionPageSlug = 'lpd_settings';
 	private static $optionGroup = 'lpd_settings_group';
 	private static $optionName = 'lpd_settings';
+	protected $logger;
 
 	public function __construct( $pluginName, $version ) 
 	{
@@ -80,6 +81,7 @@ class Last_Post_Display_Admin
 			<h1>' . get_admin_page_title() . '</h1>
 			<p class="lpd__info-message">'.__('To output posts, use the shortcode ', 'last-post-display').'<span>[lpd]</span></p>
 			<form method="post" action="options.php">';
+			settings_errors( self::$optionGroup . '_errors' );
 			settings_fields( self::$optionGroup );
 			do_settings_sections( self::$optionPageSlug );
 			submit_button();	
@@ -93,7 +95,7 @@ class Last_Post_Display_Admin
 	 */
 	public function initFieldsSettings()
 	{
-		register_setting( self::$optionGroup, self::$optionName );
+		register_setting( self::$optionGroup, self::$optionName, [$this, 'lpdValidate'] );
 
 		add_settings_section(
 			'lpd_settings_count_of_post_section',
@@ -120,7 +122,7 @@ class Last_Post_Display_Admin
 	 * Noties Fields Settings
 	 * 
 	 */
-	function inputNumberCb($args)
+	public function inputNumberCb($args)
 	{ 
 		$options = get_option(self::$optionName);
 
@@ -132,12 +134,35 @@ class Last_Post_Display_Admin
 		min="1" type="number" value="'. ( $value ?? 1 ) .'"/>';
 	}
 
+	public function lpdValidate( $inputs )
+	{
+		if( empty($inputs['count_of_posts']) || $inputs['count_of_posts'] < 1 ) {
+			$this->logger->error('Попытка сохранения с неверным количеством постов', $inputs);
+			add_settings_error(
+				self::$optionGroup . '_errors',
+				'count_of_posts',
+				__('The number of posts should not be less than 1.', 'last-post-display'),
+				'error'
+			);
+			$options = (array) get_option(self::$optionName);
+			$inputs['count_of_posts'] = !empty($options['count_of_posts']) ? (int) $options['count_of_posts'] : $inputs['count_of_posts'];
+		}
+	
+		return $inputs;
+	}
+
 	/**
 	 * Noties Fields Settings
 	 * 
 	 */
 	public function notiesSaveSettings()
 	{
+		$settingsErrors = get_settings_errors( self::$optionGroup . '_errors' );
+
+		if ( ! empty( $settingsErrors ) ) {
+			return;
+		}
+
 		if (
 			isset( $_GET[ 'page' ] )
 			&& self::$optionPageSlug == $_GET[ 'page' ]
@@ -145,7 +170,7 @@ class Last_Post_Display_Admin
 			&& true == $_GET[ 'settings-updated' ]
 		) {
 			echo '<div class="notice notice-success is-dismissible"><p>' . __('Settings saved!', 'last-post-display') . '</p></div>';
-			$options = get_option(self::$optionName);
+			$options = (array) get_option(self::$optionName);
 			$this->logger->info('Настройки обновлены', $options);
 		}
 	}
