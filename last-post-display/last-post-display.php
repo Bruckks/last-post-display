@@ -23,7 +23,6 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 define( 'LAST_POST_DISPLAY_VERSION', '1.0.0' );
-define( 'LAST_POST_DISPLAY_ROOTPATH', plugins_url() );
 
 require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 
