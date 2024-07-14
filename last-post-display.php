@@ -11,6 +11,8 @@
  * Description:       Display recent posts with shortcode.
  * Version:           1.0.0
  * Author:            bruckks
+ * Requires at least: 6.1
+ * Requires PHP: 	  8.0
  * Author URI:        https://github.com/bruckks
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
