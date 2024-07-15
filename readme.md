@@ -4,7 +4,7 @@
 <li>Download last-post-display.zip</li>
 <li>Start up the administrative panel for WordPress (/wp-admin/)</li>
 <li>Choose Plugins -&gt; Add New</li>
-<li>Upload the payment module archive via Upload Plugin.</li>
+<li>Upload the plugin archive via Upload Plugin.</li>
 <li>Choose Plugins -&gt; Installed Plugins and find the Last Post Display plugin and activate it.</li>
 </ul>
 <div class="markdown-heading" dir="auto">
